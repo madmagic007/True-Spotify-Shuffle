@@ -11,11 +11,11 @@ Spotify's own shuffling is bad because it has an algorithm?? where it prefers ce
 ## How to use
 
 <ul>
-<li>Download and install the apk from the releases page.</li>
+<li>Download and install the apk from the <a href="https://github.com/madmagic007/True-Spotify-Shuffle/releases" target="_blank">releases</a> page.</li>
 <li>Open the app, it will prompt to authorize the app to your account. Close the page once authorized and go back to the app.</li>
 <li>You must be listening to the playlist (on any device) you wish to have shuffled and click "Add current", it will now parse the playlist.</li>
 <li>Once fully parsed (it says when done), you can tap "Shuffle selected" at any time (note: spotify must be playing on the desired device or the shuffling can't begin).</li>
-<li>You can now enjoy actual shuffling of your playlist. If you with the shuffling to stop, expand the notification and press stop shuffle.</li>
+<li>You can now enjoy actual shuffling of your playlist. If you with the shuffling to stop, expand the notification and press stop shuffle (you must have an active internet connection to use the shuffling, even when listening to downloaded songs/playlists).</li>
 <li>It's important that you reparse the playlist every time you add/remove song (more info below).</li>
 </ul>
 
