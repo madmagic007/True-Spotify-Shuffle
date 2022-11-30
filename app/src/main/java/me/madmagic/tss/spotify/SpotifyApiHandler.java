@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import me.madmagic.tss.Config;
 import me.madmagic.tss.Logger;
+import me.madmagic.tss.Vars;
 import okhttp3.FormBody;
 import okhttp3.RequestBody;
 import org.json.JSONException;
@@ -19,9 +20,6 @@ import java.util.Collections;
 
 public class SpotifyApiHandler {
 
-    private static String redirect = "http://localhost:4613/callback";
-    private static final String secret = "44baae296608412a941966c38160acf3";
-    private static final String id = "f72a41e854c74533ae67ad81c0d2db7b";
     private static final String baseUrl = "https://accounts.spotify.com/";
     private static final String fields = "?fields=uri,name,tracks(next,items.track(uri))";
     private static final String scopes = "user-read-playback-state%20user-modify-playback-state";
@@ -59,7 +57,7 @@ public class SpotifyApiHandler {
     public static void handleRefreshCode(String code) throws Exception {
         RequestBody bodyRefresh = new FormBody.Builder()
                 .add("grant_type", "authorization_code")
-                .add("redirect_uri", redirect)
+                .add("redirect_uri", Vars.redirect)
                 .add("code", code).build();
 
         JSONObject response = new JSONObject(ApiSender.api(baseUrl + "api/token", bodyRefresh,
@@ -101,11 +99,11 @@ public class SpotifyApiHandler {
     }
 
     public static String refreshURL() {
-        return baseUrl + "authorize?&response_type=code&scope=" + scopes + "&redirect_uri=" + redirect + "&client_id=" + id;
+        return baseUrl + "authorize?&response_type=code&scope=" + scopes + "&redirect_uri=" + Vars.redirect + "&client_id=" + Vars.id;
     }
 
     private static String getBasicAuth() {
-        return "Basic " + Base64.getEncoder().encodeToString((id + ":" + secret).getBytes());
+        return "Basic " + Base64.getEncoder().encodeToString((Vars.id + ":" + Vars.secret).getBytes());
     }
 
     public static String getCurrentPlaylistHref() throws Exception {
