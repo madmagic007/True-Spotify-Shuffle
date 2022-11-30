@@ -19,9 +19,9 @@ import java.util.Collections;
 
 public class SpotifyApiHandler {
 
-    private static String redirect = "http://localhost:4613/callback";
-    private static final String secret = "44baae296608412a941966c38160acf3";
-    private static final String id = "f72a41e854c74533ae67ad81c0d2db7b";
+    private static String redirect = "your_redirect";
+    private static final String secret = "your_secret";
+    private static final String id = "your_id";
     private static final String baseUrl = "https://accounts.spotify.com/";
     private static final String fields = "?fields=uri,name,tracks(next,items.track(uri))";
     private static final String scopes = "user-read-playback-state%20user-modify-playback-state";
